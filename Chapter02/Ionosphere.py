@@ -24,7 +24,7 @@ def loop():
         all_score.append(score)
         
         avg_score.append(np.mean(score))
-        print("broken:{0:.1f}%".format(np.mean(score*100)))
+        #print("broken:{0:.1f}%".format(np.mean(score*100)))
         X_transformed = MinMaxScaler().fit_transform(X_broken)
         estimator = KNeighborsClassifier(n_neighbors=N_neighbors)
         broken_score = cross_val_score(estimator , X_transformed, Y ,scoring = 'accuracy')
